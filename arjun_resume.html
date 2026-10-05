@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arjun T P — Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #111827;
+    --ink-soft: #374151;
+    --ink-muted: #6B7280;
+    --accent: #1D4ED8;
+    --accent-light: #EFF6FF;
+    --rule: #E5E7EB;
+    --bg: #FAFAFA;
+    --paper: #FFFFFF;
+    --tag-bg: #F3F4F6;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 820px;
+    margin: 40px auto;
+    background: var(--paper);
+    box-shadow: 0 1px 3px rgba(0,0,0,.06), 0 8px 32px rgba(0,0,0,.06);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 24px;
+    padding: 48px 52px 36px;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 46px;
+    line-height: 1;
+    letter-spacing: -1px;
+    color: var(--ink);
+  }
+
+  .name em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .title-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-top: 8px;
+  }
+
+  .contact-block {
+    text-align: right;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    line-height: 1.9;
+  }
+
+  .contact-block a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .contact-block a:hover { text-decoration: underline; }
+
+  /* ── BODY GRID ── */
+  .body {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    padding: 40px 28px 40px 52px;
+    border-right: 1px solid var(--rule);
+  }
+
+  .sidebar-section { margin-bottom: 32px; }
+
+  .sidebar-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .skill-group { margin-bottom: 14px; }
+
+  .skill-group-name {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .skill-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .skill-list li {
+    background: var(--tag-bg);
+    color: var(--ink-soft);
+    font-size: 11.5px;
+    padding: 2px 8px;
+    border-radius: 2px;
+    line-height: 1.6;
+  }
+
+  .lang-list { list-style: none; }
+  .lang-list li {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    padding: 2px 0;
+  }
+
+  .edu-degree {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+
+  .edu-school {
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 2px;
+  }
+
+  .edu-meta {
+    font-size: 11.5px;
+    color: var(--ink-muted);
+    margin-top: 4px;
+  }
+
+  /* ── MAIN CONTENT ── */
+  .main {
+    padding: 40px 52px 40px 40px;
+  }
+
+  .section { margin-bottom: 36px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    color: var(--ink);
+    letter-spacing: -0.3px;
+  }
+
+  .section-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* Summary */
+  .summary-text {
+    font-size: 13.5px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    padding-left: 14px;
+    border-left: 3px solid var(--accent);
+  }
+
+  /* Experience */
+  .exp-item { margin-bottom: 22px; }
+  .exp-item:last-child { margin-bottom: 0; }
+
+  .exp-top {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .exp-role {
+    font-weight: 600;
+    font-size: 13.5px;
+    color: var(--ink);
+  }
+
+  .exp-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 10.5px;
+    color: var(--ink-muted);
+    white-space: nowrap;
+  }
+
+  .exp-company {
+    font-size: 12.5px;
+    color: var(--accent);
+    font-weight: 500;
+    margin-top: 1px;
+  }
+
+  .exp-location {
+    font-size: 11.5px;
+    color: var(--ink-muted);
+  }
+
+  .exp-bullets {
+    list-style: none;
+    margin-top: 7px;
+  }
+
+  .exp-bullets li {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.65;
+    margin-bottom: 3px;
+  }
+
+  .exp-bullets li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* Projects */
+  .project-item {
+    margin-bottom: 16px;
+    padding: 14px 16px;
+    background: var(--accent-light);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 2px 2px 0;
+  }
+
+  .project-name {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--ink);
+  }
+
+  .project-desc {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    margin-top: 4px;
+    line-height: 1.6;
+  }
+
+  /* Certifications */
+  .cert-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .cert-item {
+    padding: 10px 12px;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+  }
+
+  .cert-name {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+
+  .cert-org {
+    font-size: 11px;
+    color: var(--accent);
+    margin-top: 2px;
+    font-weight: 500;
+  }
+
+  .cert-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-muted);
+    margin-top: 2px;
+  }
+
+  /* Footer stripe */
+  .footer-stripe {
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent) 0%, #3B82F6 50%, #93C5FD 100%);
+  }
+
+  @media print {
+    body { background: white; }
+    .page { box-shadow: none; margin: 0; max-width: 100%; }
+  }
+
+  @media (max-width: 640px) {
+    .header { grid-template-columns: 1fr; }
+    .contact-block { text-align: left; }
+    .body { grid-template-columns: 1fr; }
+    .sidebar { border-right: none; border-bottom: 1px solid var(--rule); padding: 32px 24px; }
+    .main { padding: 32px 24px; }
+    .cert-grid { grid-template-columns: 1fr; }
+    .name { font-size: 34px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div>
+      <h1 class="name">Arjun <em>T P</em></h1>
+      <p class="title-tag">MCA Student &nbsp;·&nbsp; Software Developer &nbsp;·&nbsp; AI/ML Enthusiast</p>
+    </div>
+    <div class="contact-block">
+      <div>arjunt397@gmail.com</div>
+      <div>+91-90375 48996</div>
+      <div><a href="#">LinkedIn</a> &nbsp;·&nbsp; <a href="#">GitHub</a></div>
+      <div>Kottayam, Kerala, India</div>
+    </div>
+  </header>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Education</div>
+        <div class="edu-degree">Master of Computer Applications</div>
+        <div class="edu-school">Saintgits College of Engineering</div>
+        <div class="edu-meta">Expected 2027</div>
+        <div class="edu-meta" style="margin-top:6px">CGPA &nbsp;<strong style="color:var(--ink)">6.5</strong></div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Skills</div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Languages</div>
+          <ul class="skill-list">
+            <li>Java</li><li>Python</li><li>C</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Database</div>
+          <ul class="skill-list">
+            <li>MySQL</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">AI / ML</div>
+          <ul class="skill-list">
+            <li>NumPy</li><li>Pandas</li><li>Scikit-learn</li><li>ML Models</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Tools</div>
+          <ul class="skill-list">
+            <li>Git</li><li>GitHub</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Core Strengths</div>
+        <ul class="skill-list">
+          <li>Problem Solving</li>
+          <li>Logical Thinking</li>
+          <li>Data Handling</li>
+          <li>Software Dev Fundamentals</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Languages Known</div>
+        <ul class="lang-list">
+          <li>English</li>
+          <li>Hindi</li>
+          <li>Malayalam</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Personal</div>
+        <div style="font-size:12.5px;color:var(--ink-soft);line-height:1.8">
+          <div>DOB: Aug 24, 2004</div>
+          <div>Nationality: Indian</div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- Summary -->
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">Summary</h2>
+          <div class="section-rule"></div>
+        </div>
+        <p class="summary-text">
+          Motivated MCA student with a strong foundation in programming, database management, and AI/ML. Four internships across software development and machine learning have given me hands-on exposure to building and deploying real-world solutions. Passionate about problem-solving and eager to contribute to innovative software projects.
+        </p>
+      </section>
+
+      <!-- Internships -->
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">Internship Experience</h2>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-top">
+            <span class="exp-role">AI-ML Intensive Internship</span>
+            <span class="exp-date">May – Jun 2026</span>
+          </div>
+          <div class="exp-company">NextgenPro Innovations &amp; Edupark Pvt. Ltd</div>
+          <div class="exp-location">Cochin, Kerala</div>
+          <ul class="exp-bullets">
+            <li>Completed a 14-day intensive programme focused on AI/ML concepts, algorithms, and practical implementations.</li>
+            <li>Certified by an ISO 9001:2015 company endorsed by the Ministry of MSME, Govt. of India.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-top">
+            <span class="exp-role">Software Development Internship</span>
+            <span class="exp-date">Jun 2025</span>
+          </div>
+          <div class="exp-company">Spectrum Softtech Solutions Pvt. Ltd</div>
+          <div class="exp-location">Kochi, Kerala</div>
+          <ul class="exp-bullets">
+            <li>Curriculum-based industrial internship focused on Python development in a professional IT environment.</li>
+            <li>Recognised by senior management for diligence and inquisitiveness.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-top">
+            <span class="exp-role">Python / AI &amp; ML Internship</span>
+            <span class="exp-date">Jun – Jul 2024</span>
+          </div>
+          <div class="exp-company">Shristi Innovative</div>
+          <ul class="exp-bullets">
+            <li>Handled missing and unstructured data; worked with ML models and explored core AI concepts.</li>
+            <li>Tools: Python, NumPy, Pandas, and ML workspaces.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-top">
+            <span class="exp-role">Python / AI &amp; ML Internship</span>
+            <span class="exp-date">Jun – Jul 2024</span>
+          </div>
+          <div class="exp-company">Tisser Technologies</div>
+          <div class="exp-location">Kottayam, Kerala</div>
+          <ul class="exp-bullets">
+            <li>Applied machine learning models and data preprocessing techniques in a professional software environment.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">Projects</h2>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-name">Big Days — Event Management Application</div>
+          <div class="project-desc">Designed and developed a full application for organising events, managing registrations, and scheduling. Applied programming and database concepts to streamline event coordination workflows.</div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-name">Code Nexus — Collaboration Platform</div>
+          <div class="project-desc">Built a platform focused on coding collaboration and project management. Leveraged problem-solving, programming, and database management skills to enhance team productivity.</div>
+        </div>
+      </section>
+
+      <!-- Certifications -->
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">Certifications</h2>
+          <div class="section-rule"></div>
+        </div>
+        <div class="cert-grid">
+          <div class="cert-item">
+            <div class="cert-name">Introduction to Data Science</div>
+            <div class="cert-org">Infosys Springboard</div>
+            <div class="cert-date">Aug 2024</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">Intro to Robotic Process Automation</div>
+            <div class="cert-org">Infosys Springboard</div>
+            <div class="cert-date">Aug 2024</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">Big Data 101 (BD0101EN)</div>
+            <div class="cert-org">IBM SkillsBuild</div>
+            <div class="cert-date">Feb 2023</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">IBM Cloud Essentials V3</div>
+            <div class="cert-org">IBM SkillsBuild</div>
+            <div class="cert-date">Feb 2023</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">Introduction to Cloud (CC0101EN)</div>
+            <div class="cert-org">IBM SkillsBuild</div>
+            <div class="cert-date">Jan 2023</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">Bootstrap — Student Training Programme</div>
+            <div class="cert-org">Saintgits / IIT Bombay Spoken Tutorial</div>
+            <div class="cert-date">Dec 2024 – Jan 2025</div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <div class="footer-stripe"></div>
+</div>
+</body>
+</html>
